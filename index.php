@@ -7,4 +7,19 @@ require_once 'core/init.php';
 //var_dump(Config::get('mysql/host/index'));
 
 
-DB::getInstance();
+// DB::getInstance();
+
+// $user = DB::getInstance()->query("SELECT username FROM users\ WHERE username =?", array('alex'));
+// if ($user->error()) {
+//   echo "No user";
+// } else {
+//   echo "Ok!";
+// }
+
+$user = DB::getInstance()->get('users', array('username', '=', 'bill'));
+
+if (!$user->count()) {
+  echo "No user";
+} else {
+  echo "Ok!";
+}
