@@ -16,10 +16,25 @@ require_once 'core/init.php';
 //   echo "Ok!";
 // }
 
-$user = DB::getInstance()->get('users', array('username', '=', 'bill'));
+// $user = DB::getInstance()->get('users', array('username', '=', 'alex'));
+//
+// if (!$user->count()) {
+//   echo "No user";
+// } else {
+//   echo "Ok!";
+// }
+
+//$user = DB::getInstance()->query("SELECT * FROM users");
+
+$user = DB::getInstance()->get('users', array('username', '=', 'alex'));
+
 
 if (!$user->count()) {
   echo "No user";
 } else {
-  echo "Ok!";
+  // foreach ($user->results() as $user) {
+  //   echo $user->username, '<br>';
+  // }
+  //echo $user->results()[0]->username;
+  echo $user->first()->username;
 }
