@@ -2,29 +2,29 @@
 // Core Initialization
 require_once 'core/init.php';
 
-// Teste de Configuração video "06. Config Class"
-//echo Config::get('mysql/host'); // 'localhost'
-//var_dump(Config::get('mysql/host/index'));
+/*Teste de Configuração video "06. Config Class"
+echo Config::get('mysql/host'); // 'localhost'
+var_dump(Config::get('mysql/host/index'));
 
 
-// DB::getInstance();
+DB::getInstance();
 
-// $user = DB::getInstance()->query("SELECT username FROM users\ WHERE username =?", array('alex'));
-// if ($user->error()) {
-//   echo "No user";
-// } else {
-//   echo "Ok!";
-// }
+$user = DB::getInstance()->query("SELECT username FROM users\ WHERE username =?", array('alex'));
+if ($user->error()) {
+  echo "No user";
+} else {
+  echo "Ok!";
+}
 
-// $user = DB::getInstance()->get('users', array('username', '=', 'alex'));
-//
-// if (!$user->count()) {
-//   echo "No user";
-// } else {
-//   echo "Ok!";
-// }
+$user = DB::getInstance()->get('users', array('username', '=', 'alex'));
 
-//$user = DB::getInstance()->query("SELECT * FROM users");
+if (!$user->count()) {
+  echo "No user";
+} else {
+  echo "Ok!";
+}
+
+$user = DB::getInstance()->query("SELECT * FROM users");
 
 $user = DB::getInstance()->get('users', array('username', '=', 'alex'));
 
@@ -32,9 +32,21 @@ $user = DB::getInstance()->get('users', array('username', '=', 'alex'));
 if (!$user->count()) {
   echo "No user";
 } else {
-  // foreach ($user->results() as $user) {
-  //   echo $user->username, '<br>';
-  // }
-  //echo $user->results()[0]->username;
+  foreach ($user->results() as $user) {
+    echo $user->username, '<br>';
+  }
+  echo $user->results()[0]->username;
   echo $user->first()->username;
 }
+
+$user = DB::getInstance()->insert('users', array(
+  'username'  => 'Dale',
+  'password'  => 'password',
+  'salt'      => 'salt'
+));*/
+
+$userUpdate = DB::getInstance()->update('users', 13, array(
+  'username' => 'TesteUpdate',
+  'password'  => 'newpassword',
+  'name' => 'Emanuel Limeira'
+));
