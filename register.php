@@ -1,6 +1,8 @@
 <?php
   require_once 'core/init.php';
 
+var_dump(Token::check(Input::get('token')));
+
   if (Input::exists()) {
     //echo "Submitted!";
     //echo Input::get('username');
@@ -60,7 +62,7 @@
     <label for="password_again">Enter your password again</label>
     <input type="password" name="password_again" value="" id="password_again" autocomplete="off">
   </div>
-
+  <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
   <input type="submit" value="Register">
 
 </form>
