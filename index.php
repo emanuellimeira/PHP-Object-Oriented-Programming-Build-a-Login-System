@@ -49,8 +49,16 @@ $userUpdate = DB::getInstance()->update('users', 13, array(
   'username' => 'TesteUpdate',
   'password'  => 'newpassword',
   'name' => 'Emanuel Limeira'
-));*/
+));
 
 if (Session::exists('success')) {
   echo Session::flash('success');
+}
+*/
+
+
+
+
+if (Session::exists('home')) {
+  echo '<p>' . Session::flash('home') .  '</p>';
 }

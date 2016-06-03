@@ -34,8 +34,36 @@
 
       if ($validation->passed()) {
           //echo "Passed!";
-          Session::flash('success', 'You registered successfully!');
-          header('Location: index.php');
+          //Session::flash('success', 'You registered successfully!');
+          //header('Location: index.php');
+          $user = new User();
+          try {
+
+            $salt = Hash::salt(32);
+
+            //echo "<meta charset='utf-8'><pre>";
+            //print_r($salt);
+            //echo "</pre>";
+
+            //die();
+
+            $user->create(array(
+              'username' => Input::get('username'),
+              'password' => Hash::make(Input::get('password'), $salt),
+              'salt' => $salt,
+              'name' => Input::get('name'),
+              'joined' => date('Y-m-d H:i:s'),
+              'group' => 1
+              //'' => '',
+            ));
+
+            Session::flash('home', 'You have been registered and can now log in!');
+            header('Location: index.php');
+
+          } catch (Exception $e) {
+            die($e->getMessage());
+          }
+
       } else {
         //print_r($validation->errors());
         foreach ($validation->errors() as $error) {
