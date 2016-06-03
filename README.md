@@ -12,9 +12,12 @@ We've stripped away all the design elements of the RL system you will create so 
 
 By the time you are done with this course, you will have gained a real world skill that will help you in your goal to become a web developer, or will get you ahead in your current job.
 
+## Buy the Course
+
+Buy the course on [PHP Object Oriented Programming: Build a Login System](https://www.udemy.com/php-object-oriented-programming-build-a-login-system/)
+
+## This Repo
 
 This files is a compilation created for myself. Enjoy! ;)
 
---
-
-Buy the course on [PHP Object Oriented Programming: Build a Login System](https://www.udemy.com/php-object-oriented-programming-build-a-login-system/)
+2016 / [Emanuel Limeira](https://emanuellimeira.com.br)
