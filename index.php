@@ -62,3 +62,5 @@ if (Session::exists('success')) {
 if (Session::exists('home')) {
   echo '<p>' . Session::flash('home') .  '</p>';
 }
+
+print Session::get(Config::get('session/session_name'));
