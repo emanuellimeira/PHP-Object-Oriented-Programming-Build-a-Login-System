@@ -80,6 +80,11 @@ if ($user->isLoggedIn()) {
 
   </ul>
   <?php
+  // User Permission
+  if ($user->hasPermission('moderator')) {
+    echo "<p>You are an moderator.</p>";
+  }
+
 } else {
   echo "<p>You need to <a href='login.php'>log in</a> or <a href='register.php'>register</a></p>";
 }
