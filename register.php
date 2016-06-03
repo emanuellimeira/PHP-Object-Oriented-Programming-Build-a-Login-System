@@ -104,7 +104,7 @@ include 'includes/header.php';
     <input type="password" class="form-control" name="password_again" value="" id="password_again" autocomplete="off">
   </div>
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-  <input type="submit" value="Register">
+  <input type="submit" class="btn btn-success" value="Register">
 
 </form>
 

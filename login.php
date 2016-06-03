@@ -27,7 +27,7 @@ if (Input::exists()) {
         //echo "logado!";
         Redirect::to('index.php');
       } else {
-        echo "<p>Sorry, logging in failed.</p>";
+        echo "<p class='label label-danger'>Sorry, logging in failed.</p><br><br>";
       }
 
     } else {
@@ -59,7 +59,7 @@ if (Input::exists()) {
   </div>
 
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
-  <input type="Submit" value="Login">
+  <input type="Submit" class="btn btn-primary" value="Login">
 </form>
 
 <?php

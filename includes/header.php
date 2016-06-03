@@ -64,7 +64,13 @@
 
             </li>
           </ul>
-          <?php } // end isLoggedIn ?>
+          <?php } // end isLoggedIn
+          else { ?>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="login.php">Login</a></li>
+              <li><a href="register.php">Register</a></li>
+            </ul>
+            <?php } // end else  ?>
 
         </div><!--/.nav-collapse -->
 

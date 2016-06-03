@@ -74,6 +74,8 @@ if (Session::exists('home')) {
 $user = new User();
 //echo $user->data()->username;
 if ($user->isLoggedIn()) {
+
+  echo "<p class='label label-success'>Success! You are logged in!</p><br><br>";
   ?>
   <p>
     Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>
