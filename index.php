@@ -70,7 +70,7 @@ $user = new User();
 if ($user->isLoggedIn()) {
   ?>
   <p>
-    Hello <a href="#"><?php echo escape($user->data()->name); ?></a>
+    Hello <a href="profile.php?user=<?php echo escape($user->data()->username); ?>"><?php echo escape($user->data()->name); ?></a>
   </p>
 
   <ul>
