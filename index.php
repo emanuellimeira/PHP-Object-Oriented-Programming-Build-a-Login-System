@@ -70,11 +70,13 @@ $user = new User();
 if ($user->isLoggedIn()) {
   ?>
   <p>
-    Hello <a href="#"><?php echo escape($user->data()->username); ?></a>
+    Hello <a href="#"><?php echo escape($user->data()->name); ?></a>
   </p>
 
   <ul>
+    <li><a href="update.php">Update</a></li>
     <li><a href="logout.php">Logout</a></li>
+
   </ul>
   <?php
 } else {
