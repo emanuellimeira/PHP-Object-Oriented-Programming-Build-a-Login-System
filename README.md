@@ -2,7 +2,7 @@
 
 Learn Object Oriented PHP while building a secure & scalable authentication system with validation & database handling.
 
-By (Stone River eLearning)[http://stoneriverelearning.com/]
+By [Stone River eLearning](http://stoneriverelearning.com/)
 
 ## Description
 
@@ -13,8 +13,8 @@ We've stripped away all the design elements of the RL system you will create so 
 By the time you are done with this course, you will have gained a real world skill that will help you in your goal to become a web developer, or will get you ahead in your current job.
 
 
-This files is a compilation created for myself. Enjoy! ;) 
+This files is a compilation created for myself. Enjoy! ;)
 
 --
 
-Buy the course on (PHP Object Oriented Programming: Build a Login System)[https://www.udemy.com/php-object-oriented-programming-build-a-login-system/]
+Buy the course on [PHP Object Oriented Programming: Build a Login System](https://www.udemy.com/php-object-oriented-programming-build-a-login-system/)
