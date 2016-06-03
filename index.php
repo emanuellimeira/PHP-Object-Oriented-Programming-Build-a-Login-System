@@ -43,10 +43,14 @@ $user = DB::getInstance()->insert('users', array(
   'username'  => 'Dale',
   'password'  => 'password',
   'salt'      => 'salt'
-));*/
+));
 
 $userUpdate = DB::getInstance()->update('users', 13, array(
   'username' => 'TesteUpdate',
   'password'  => 'newpassword',
   'name' => 'Emanuel Limeira'
-));
+));*/
+
+if (Session::exists('success')) {
+  echo Session::flash('success');
+}

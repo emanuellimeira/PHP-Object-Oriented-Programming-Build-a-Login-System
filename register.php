@@ -1,45 +1,50 @@
 <?php
   require_once 'core/init.php';
 
-var_dump(Token::check(Input::get('token')));
+//var_dump(Token::check(Input::get('token')));
 
   if (Input::exists()) {
-    //echo "Submitted!";
-    //echo Input::get('username');
-    //echo Input::get('password');
-    //echo Input::get('password_again');
-    $validate = new Validate();
-    $validation = $validate->check($_POST, array(
-      'username' => array(
-        'required' => true,
-        'min' => 2,
-        'max' => 20,
-        'unique' => 'users'
-      ),
-      'password' => array(
-        'required' => true,
-        'min' => 6
-      ),
-      'password_again' => array(
-        'required' => true,
-        'matches' => 'password'
-      ),
-      'name' => array(
-        'required' => true,
-        'min' => 2,
-        'max' => 50
-      )
-    ));
+    if (Token::check(Input::get('token'))) {
+      //echo "Submitted!";
+      //echo Input::get('username');
+      //echo Input::get('password');
+      //echo Input::get('password_again');
+      $validate = new Validate();
+      $validation = $validate->check($_POST, array(
+        'username' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 20,
+          'unique' => 'users'
+        ),
+        'password' => array(
+          'required' => true,
+          'min' => 6
+        ),
+        'password_again' => array(
+          'required' => true,
+          'matches' => 'password'
+        ),
+        'name' => array(
+          'required' => true,
+          'min' => 2,
+          'max' => 50
+        )
+      ));
 
-    if ($validation->passed()) {
-        echo "Passed!";
-    } else {
-      //print_r($validation->errors());
-      foreach ($validation->errors() as $error) {
-        echo $error, '<br>';
+      if ($validation->passed()) {
+          //echo "Passed!";
+          Session::flash('success', 'You registered successfully!');
+          header('Location: index.php');
+      } else {
+        //print_r($validation->errors());
+        foreach ($validation->errors() as $error) {
+          echo $error, '<br>';
+        }
       }
-    }
-  }
+
+    } // fim segundo if
+  } // fim primeiro if
 ?>
 
 <form class="" action="" method="post">
