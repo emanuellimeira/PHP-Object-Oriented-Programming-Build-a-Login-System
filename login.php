@@ -1,6 +1,12 @@
-
 <?php
+
+// Core Initialization
 require_once 'core/init.php';
+
+echo "<div class='maincontainer'>";
+
+// Header
+include 'includes/header.php';
 
 if (Input::exists()) {
   //echo "teste";
@@ -36,17 +42,17 @@ if (Input::exists()) {
 
 <form class="" action="" method="post">
 
-  <div class="field">
+  <div class="field form-group">
     <label for="username">Username:</label>
-    <input type="text" name="username" id="username" autocomplete="off">
+    <input type="text" class="form-control" name="username" id="username" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password" autocomplete="off">
+    <input type="password" class="form-control" name="password" id="password" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="remember">
       <input type="checkbox" name="remember" id="remember"> Remember me
     </label>
@@ -55,3 +61,8 @@ if (Input::exists()) {
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
   <input type="Submit" value="Login">
 </form>
+
+<?php
+  echo "</div> <!-- //maincontainer -->";
+  include 'includes/footer.php';
+?>

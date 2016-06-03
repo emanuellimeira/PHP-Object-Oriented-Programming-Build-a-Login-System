@@ -1,6 +1,12 @@
 <?php
+
 // Core Initialization
 require_once 'core/init.php';
+
+// Header
+include 'includes/header.php';
+
+echo "<div class='maincontainer'>";
 
 $user = new User();
 
@@ -52,22 +58,29 @@ if (Input::exists()) {
 }
 ?>
 
+
+
 <form class="" action="" method="post">
-  <div class="field">
+  <div class="field form-group">
     <label for="password_current">Current password</label>
-    <input type="password" name="password_current" value="" id="password_current" autocomplete="off">
+    <input type="password" class="form-control" name="password_current" value="" id="password_current" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="password_new">New password</label>
-    <input type="password" name="password_new" value="" id="password_new" autocomplete="off">
+    <input type="password" class="form-control" name="password_new" value="" id="password_new" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="password_new_again">New password again</label>
-    <input type="password" name="password_new_again" value="" id="password_new_again" autocomplete="off">
+    <input type="password" class="form-control" name="password_new_again" value="" id="password_new_again" autocomplete="off">
   </div>
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
   <input type="submit" value="Change">
 
 </form>
+
+<?php
+  echo "</div> <!-- //maincontainer -->";
+  include 'includes/footer.php';
+?>

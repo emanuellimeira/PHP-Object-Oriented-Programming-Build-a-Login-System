@@ -1,6 +1,12 @@
 <?php
 
+// Core Initialization
 require_once 'core/init.php';
+
+echo "<div class='maincontainer'>";
+
+// Header
+include 'includes/header.php';
 
 $user = new User();
 
@@ -41,9 +47,9 @@ if(Input::exists()) {
 ?>
 
 <form class="" action="" method="post">
-  <div class="field">
+  <div class="field form-group">
     <label for="name">Name</label>
-    <input type="text" name="name" value="<?php echo escape($user->data()->name); ?>">
+    <input type="text" name="name" class="form-control" value="<?php echo escape($user->data()->name); ?>">
 
     <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
     <input type="submit" value="Update">
@@ -51,3 +57,8 @@ if(Input::exists()) {
 </form>
 
 <a href="index.php">Back to Index</a>
+
+<?php
+  echo "</div> <!-- //maincontainer -->";
+  include 'includes/footer.php';
+?>

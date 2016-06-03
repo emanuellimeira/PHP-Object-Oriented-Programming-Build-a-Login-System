@@ -1,5 +1,12 @@
 <?php
-  require_once 'core/init.php';
+
+// Core Initialization
+require_once 'core/init.php';
+
+echo "<div class='maincontainer'>";
+
+// Header
+include 'includes/header.php';
 
 //var_dump(Token::check(Input::get('token')));
 
@@ -77,26 +84,31 @@
 ?>
 
 <form class="" action="" method="post">
-  <div class="field">
+  <div class="field form-group">
     <label for="name">Your Name</label>
-    <input type="text" name="name" value="<?php echo escape(Input::get('name')); ?>" id="name" autocomplete="off">
+    <input type="text" class="form-control" name="name" value="<?php echo escape(Input::get('name')); ?>" id="name" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="username">Username</label>
-    <input type="text" name="username" value="<?php echo escape(Input::get('username')); ?>" id="username" autocomplete="off">
+    <input type="text" class="form-control" name="username" value="<?php echo escape(Input::get('username')); ?>" id="username" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="password">Choose a password</label>
-    <input type="password" name="password" value="" id="password" autocomplete="off">
+    <input type="password" class="form-control" name="password" value="" id="password" autocomplete="off">
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label for="password_again">Enter your password again</label>
-    <input type="password" name="password_again" value="" id="password_again" autocomplete="off">
+    <input type="password" class="form-control" name="password_again" value="" id="password_again" autocomplete="off">
   </div>
   <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
   <input type="submit" value="Register">
 
 </form>
+
+<?php
+  echo "</div> <!-- //maincontainer -->";
+  include 'includes/footer.php';
+?>

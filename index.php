@@ -1,6 +1,12 @@
 <?php
+
 // Core Initialization
 require_once 'core/init.php';
+
+// Header
+include 'includes/header.php';
+
+
 
 /*Teste de Configuração video "06. Config Class"
 echo Config::get('mysql/host'); // 'localhost'
@@ -57,7 +63,7 @@ if (Session::exists('success')) {
 */
 
 
-
+echo "<div class='maincontainer'>";
 
 if (Session::exists('home')) {
   echo '<p>' . Session::flash('home') .  '</p>';
@@ -81,10 +87,14 @@ if ($user->isLoggedIn()) {
   </ul>
   <?php
   // User Permission
-  if ($user->hasPermission('moderator')) {
-    echo "<p>You are an moderator.</p>";
+  if ($user->hasPermission('admin')) {
+    echo "<p>You are an Administrator!</p>";
   }
 
 } else {
   echo "<p>You need to <a href='login.php'>log in</a> or <a href='register.php'>register</a></p>";
 }
+
+echo "</div> <!-- //maincontainer -->";
+
+include 'includes/footer.php';
